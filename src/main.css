@@ -3,9 +3,29 @@ body{
     font-family: 'Jim Nightshade', sans-serif;
 }
 
+.general {
+    display: flex;
+    justify-content: space-between;
+}
+
 .div-left {
-    width: 12%;
-    margin-left: 3%;
+    width: 33%;
+    /* margin-left: 3%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-middle{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-right {
+    width: 33%;
+    /* margin-right: 4%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,8 +33,14 @@ body{
 
 .title{
     font-size: 200%;
+    width: 33%;
     /* text-wrap: wrap;
     overflow-wrap: break-word; */
+}
+
+.subtitle{
+    font-size: 150%;
+    padding-top: 10%;
 }
 
 .main-info{
@@ -32,4 +58,21 @@ body{
     background: none;
     cursor: pointer;
     font-size: 100%;
+}
+
+.attributes{
+    padding-top: 15%;
+    font-size: 150%;
+}
+
+.tabela-atributos{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tabela-atributos td {
+    border: 1px solid black;
+    padding: 20px 100px;   /* ↑↓ 10px, ←→ 20px */
+    line-height: 1.5;     /* Altura da linha maior */
+    text-align: left;
 }
