@@ -76,3 +76,11 @@ body{
     line-height: 1.5;     /* Altura da linha maior */
     text-align: left;
 }
+
+.minus-btn, .plus-btn {
+    font-family: 'Jim Nightshade', sans-serif;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 150%;
+}
