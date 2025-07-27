@@ -37,6 +37,27 @@ if (localStorage.getItem('cla')) cla.innerText = localStorage.getItem('cla');
 if (localStorage.getItem('escola')) escola.innerText = localStorage.getItem('escola');
 if (localStorage.getItem('arma')) arma.innerText = localStorage.getItem('arma');
 
+const historia = document.getElementById("historia");
+
+historia.addEventListener('blur', () => {
+    const newHistoria = historia.innerText;
+    localStorage.setItem('historia', newHistoria);
+});
+
+if (localStorage.getItem('historia')) historia.innerText = localStorage.getItem('historia');
+
+function toggleStory() {
+    const popup = document.getElementById("popup");
+    const info = document.getElementById("main-info")
+    if (info.style.display === 'none') {
+        popup.classList.add('hidden');
+        info.style.display = 'flex';
+    } else {
+        popup.classList.remove('hidden');
+        info.style.display = 'none';
+    }
+}
+
 const hp = document.getElementById("hp")
 const agl = document.getElementById("agl")
 const res = document.getElementById("res")

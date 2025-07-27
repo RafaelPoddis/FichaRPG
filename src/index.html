@@ -11,12 +11,18 @@
 </head>
 <body>
     <div class="general">
-
+        
         <div class="div-left">
             <div class="title">
                 <h1>Renascidos da Guerra</h1>
             </div>
-            <div class="main-info">
+            <div id="popup" class="hidden">
+                <div class="historia">
+                    <h2>História do Guerreiro</h2>
+                    <p id="historia" contenteditable="true">Escreva aqui a sua história</p>
+                </div>
+            </div>
+            <div id="main-info" class="main-info">
                 <div class="info">
                     <p class="identifier">Nome:&nbsp</p>
                     <p id="name" contenteditable="true">Nome do guerreiro</p>
@@ -37,8 +43,8 @@
                     <p class="identifier">Arma:&nbsp</p>
                     <p id="arma" contenteditable="true">Arma</p>
                 </div>
-                <button id="story">História</button>
             </div>
+            <button id="story" onclick="toggleStory()">História</button>
         </div>
         <div class="div-middle">
             <div class="subtitle">

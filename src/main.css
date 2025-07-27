@@ -62,10 +62,29 @@ body{
 #story {
     margin-top: 10%;
     font-family: 'Jim Nightshade', sans-serif;
-    border: none;
+    border-radius: 8px;
+    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.5);
     background: none;
     cursor: pointer;
-    font-size: 100%;
+    font-size: 140%;
+}
+
+#story:hover {
+    text-decoration: underline;
+}
+
+#popup.hidden {
+    display: none;
+}
+
+#popup {
+  border: 2px solid black;
+  max-width: 45%;
+  height: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 125%;
 }
 
 .attributes{
