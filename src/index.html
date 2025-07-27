@@ -33,28 +33,23 @@
                 <table class="tabela-atributos">
                     <tr>
                         <td>Vida</td>
-                        <!-- <td><button class="minus-btn">-</button><span contenteditable="true">10</span><button class="plus-btn">+</button></td> -->
-                         <td contenteditable="true">10</td>
+                        <td id="vida"><button onclick="decrement(event)" class="minus-btn">-</button><span id="hp">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
                     </tr>
                     <tr>
                         <td>Agilidade</td>
-                        <!-- <td><button class="minus-btn">-</button><span contenteditable="true">10</span><button class="plus-btn">+</button></td> -->
-                         <td contenteditable="true">10</td>
+                        <td id="agilidade"><button onclick="decrement(event)" class="minus-btn">-</button><span id="agl">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
                     </tr>
                     <tr>
                         <td>Resistência</td>
-                        <!-- <td><button class="minus-btn">-</button><span contenteditable="true">10</span><button class="plus-btn">+</button></td> -->
-                         <td contenteditable="true">10</td>
+                        <td id="resistencia"><button onclick="decrement(event)" class="minus-btn">-</button><span id="res">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
                     </tr>
                     <tr>
                         <td>Força</td>
-                        <!-- <td><button class="minus-btn">-</button><span contenteditable="true">10</span><button class="plus-btn">+</button></td> -->
-                         <td contenteditable="true">10</td>
+                        <td id="forca"><button onclick="decrement(event)" class="minus-btn">-</button><span id="force">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
                     </tr>
                     <tr>
                         <td>Eficiência</td>
-                        <!-- <td><button class="minus-btn">-</button><span contenteditable="true">10</span><button class="plus-btn">+</button></td> -->
-                         <td contenteditable="true">10</td>
+                        <td id="eficiencia"><button onclick="decrement(event)" class="minus-btn">-</button><span id="efc">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
                     </tr>
                 </table>
             </div>
@@ -65,6 +60,6 @@
             </div>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
-<script src="main.js"></script>
 </html>
