@@ -51,6 +51,14 @@ body{
     line-height: 0.9;
 }
 
+.info {
+    display: flex;
+}
+
+.identifier {
+    font-weight: bolder;
+}
+
 #story {
     margin-top: 10%;
     font-family: 'Jim Nightshade', sans-serif;
@@ -61,7 +69,7 @@ body{
 }
 
 .attributes{
-    padding-top: 15%;
+    padding-top: 12%;
     font-size: 150%;
 }
 
