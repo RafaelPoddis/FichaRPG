@@ -39,6 +39,10 @@ body{
 }
 
 .subtitle{
+    display: flex;
+    flex-direction: column;
+    line-height: 0.7;
+    align-items: center;
     font-size: 150%;
     padding-top: 10%;
 }
@@ -78,18 +82,39 @@ body{
 }
 
 #popup {
-  border: 2px solid black;
-  max-width: 45%;
-  height: 70%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  font-size: 125%;
+    max-height: 10%;
+    overflow-y: auto;
+    border: 2px solid black;
+    max-width: 45%;
+    height: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 125%;
+}
+
+#popup::-webkit-scrollbar {
+  width: 9px; /* largura da barra */
+}
+
+/* #popup::-webkit-scrollbar-track {
+  background: #402a1f;
+  border-radius: 4px;
+} */
+
+#popup::-webkit-scrollbar-thumb {
+  background-color: #b07a56; /* "bolinha" que você arrasta */
+  border-radius: 6px;
+  border: 1px solid #402a1f; /* contorno */
+}
+
+#popup::-webkit-scrollbar-thumb:hover {
+  background-color: #d09b73; /* cor quando passa o mouse */
 }
 
 .attributes{
-    padding-top: 12%;
-    font-size: 150%;
+    /* padding-top: 8%; */
+    font-size: 175%;
 }
 
 .tabela-atributos{
