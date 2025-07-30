@@ -1,3 +1,4 @@
+/* ---------- INFORMACOES DA ESQUERDA ---------- */ 
 const nome = document.getElementById("name")
 const periodo = document.getElementById("periodo")
 const cla = document.getElementById("cla")
@@ -58,6 +59,7 @@ function toggleStory() {
     }
 }
 
+/* ---------- INFORMACOES DO MEIO ---------- */
 const hp = document.getElementById("hp")
 const agl = document.getElementById("agl")
 const res = document.getElementById("res")
@@ -107,3 +109,34 @@ function decrement(event){
         localStorage.setItem('eficiencia', efc.innerText);
     }
 }
+
+// let hpMod = 10
+// let vida_max = 100 + (hpMod * 10);
+// let vida_texto = document.getElementById("pontos-vida");
+
+// let vida_atual = vida_max;
+// function life_handler(){
+//     pass
+// }
+
+// vida_texto.innerText = vida_atual + " / " + vida_max;
+async function load_modifiers() {
+    const resposta = await fetch("/docs/modificadores.json");
+    const dados = await resposta.json();
+    return dados.atributos;
+}
+
+function toggleModifiers() {
+    const popup = document.getElementById("modPopup");
+    const info = document.getElementById("tAtributos")
+    if (info.style.display === 'none') {
+        popup.classList.add('hidden');
+        info.style.display = 'flex';
+    } else {
+        popup.classList.remove('hidden');
+        info.style.display = 'none';
+    }
+}
+
+
+/* ---------- INFORMACOES DA DIREITA ---------- */ 

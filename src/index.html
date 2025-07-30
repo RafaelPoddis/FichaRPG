@@ -49,9 +49,26 @@
         <div class="div-middle">
             <div class="subtitle">
                 <h1>Atributos</h1>
+                <!-- <p>Vida Atual</p>
+                <div class="life-bar">
+                    <div class="inner-life-bar"></div>
+                    <span id="pontos-vida" class="life-text">63 / 250</span>
+                </div> -->
             </div>
             <div class="attributes">
-                <table class="tabela-atributos">
+                <div id="modPopup" class="hidden">
+                    <table class="tabela-modificadores">
+                        <tr>
+                            <th>Valor</th>
+                            <th>Modificador</th>
+                        </tr>
+                        <tr>
+                            <td>0-1</td>
+                            <td>-5</td>
+                        </tr>
+                    </table>
+                </div>
+                <table id="tAtributos" class="tabela-atributos">
                     <tr>
                         <td>Vida</td>
                         <td id="vida"><button onclick="decrement(event)" class="minus-btn">-</button><span id="hp">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
@@ -73,6 +90,7 @@
                         <td id="eficiencia"><button onclick="decrement(event)" class="minus-btn">-</button><span id="efc">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
                     </tr>
                 </table>
+                <button id="modifiers" onclick="toggleModifiers()">Modificadores</button>
             </div>
         </div>
         <div class="div-right">
