@@ -74,8 +74,9 @@ if (localStorage.getItem('efc')) efc.innerText = localStorage.getItem('efc');
 
 
 let modificadores = {};
-
+let counter = 0;
 window.addEventListener("DOMContentLoaded", async () => {
+    counter = 0;
     modificadores = await load_modifiers();
     inicializarModificadores();
 });
@@ -190,7 +191,6 @@ const item = document.getElementById("item");
 const items_list = document.getElementById("items-list");
 const add_btn = document.getElementById("add-btn");
 
-let counter = 0
 add_btn.addEventListener('click', () => {
     if (counter >= 1){
         return;
