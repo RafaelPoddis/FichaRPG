@@ -136,7 +136,7 @@ function atualizarModificador(id, valor) {
 
 // vida_texto.innerText = vida_atual + " / " + vida_max;
 async function load_modifiers() {
-    const resposta = await fetch("modificadores.json");
+    const resposta = await fetch("./modificadores.json");
     const dados = await resposta.json();
     return dados.atributos;
 }
