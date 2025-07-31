@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renascidos da Guerra - Ficha</title>
+    <link href="main.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="general">
+        
+        <div class="div-left">
+            <div class="title">
+                <h1>Renascidos da Guerra</h1>
+            </div>
+            <div id="popup" class="hidden">
+                <div class="historia">
+                    <h2>História do Guerreiro</h2>
+                    <p id="historia" contenteditable="true">Escreva aqui a sua história</p>
+                </div>
+            </div>
+            <div id="main-info" class="main-info">
+                <div class="info">
+                    <p class="identifier">Nome:&nbsp</p>
+                    <p id="name" contenteditable="true">Nome do guerreiro</p>
+                </div>
+                <div class="info">
+                    <p class="identifier">Periodo:&nbsp</p>
+                    <p id="periodo" contenteditable="true">Periodo</p>
+                </div>
+                <div class="info">
+                    <p class="identifier">Clã:&nbsp</p>
+                    <p id="cla" contenteditable="true">Clã</p>
+                </div>
+                <div class="info">
+                    <p class="identifier">Escola:&nbsp</p>
+                    <p id="escola" contenteditable="true">Escola</p>
+                </div>
+                <div class="info">
+                    <p class="identifier">Arma:&nbsp</p>
+                    <p id="arma" contenteditable="true">Arma</p>
+                </div>
+            </div>
+            <button id="story" onclick="toggleStory()">História</button>
+        </div>
+        <div class="div-middle">
+            <div class="subtitle">
+                <h1>Atributos</h1>
+                <!-- <p>Vida Atual</p>
+                <div class="life-bar">
+                    <div class="inner-life-bar"></div>
+                    <span id="pontos-vida" class="life-text">63 / 250</span>
+                </div> -->
+            </div>
+            <div class="attributes">
+                <div id="modPopup" class="hidden">
+                    <table class="tabela-modificadores">
+                        <thead>
+                            <tr>
+                                <th>Valor</th>
+                                <th>Modificador</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modTableBody">
+                            <!-- TABELA INSERIDA VIA JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <table id="tAtributos" class="tabela-atributos">
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Valor</th>
+                        <th>Modificador</th>
+                    </tr>
+                    <tr>
+                        <td>Vida</td>
+                        <td id="vida">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="hp">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-hp">0</td>
+                    </tr>
+                    <tr>
+                        <td>Agilidade</td>
+                        <td id="agilidade">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="agl">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-agl">0</td>
+                    </tr>
+                    <tr>
+                        <td>Resistência</td>
+                        <td id="resistencia">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="res">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-res">0</td>
+                    </tr>
+                    <tr>
+                        <td>Força</td>
+                        <td id="forca">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="force">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-force">0</td>
+                    </tr>
+                    <tr>
+                        <td>Eficiência</td>
+                        <td id="eficiencia">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="efc">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-efc">0</td>
+                    </tr>
+                </table>
+                <button id="modifiers" onclick="toggleModifiers()">Modificadores</button>
+            </div>
+        </div>
+        <div class="div-right">
+            <div class="subtitle">
+                <h1>Inventário</h1>
+            </div>
+            <div class="items-list">
+                <div id="item" class="item">
+                    <!-- <button id="delete">x</button>
+                    <p>Nome do item</p>
+                    <button onclick="decrement(event)" class="minus-btn">-</button>
+                    <span>10</span>
+                    <button onclick="increment(event)" class="plus-btn">+</button> -->
+                </div>
+            </div>
+            <button id="add-btn">+</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
