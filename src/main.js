@@ -184,8 +184,17 @@ const item = document.getElementById("item");
 const items_list = document.getElementById("items-list");
 const add_btn = document.getElementById("add-btn");
 
+let counter = 0
 add_btn.addEventListener('click', () => {
+    if (counter >= 1){
+        return;
+    }
+    const msg = document.createElement("p");
+    msg.textContent = "Essa parte ainda não está pronta. Volte daqui algum tempo!";
+    msg.style.fontSize = "150%";
+    counter++;
 
+    add_btn.previousElementSibling.appendChild(msg);
 })
 
 function deleteItem(event) {
