@@ -7,7 +7,7 @@ body{
 
 .general {
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
 }
 
 .div-left {
@@ -36,6 +36,7 @@ body{
 .title{
     font-size: 200%;
     width: 33%;
+    text-align: center;
     /* text-wrap: wrap;
     overflow-wrap: break-word; */
 }
@@ -241,3 +242,14 @@ body{
     justify-content: space-between;
     gap: 5px;
 } */
+
+@media (max-width: 768px) {
+  .general {
+    flex-direction: column; /* empilha as 3 divs em vez de deixá-las lado a lado */
+    align-items: center; /* opcional: centraliza no eixo horizontal */
+  }
+
+  .div-left, .div-middle, .div-right {
+    width: 100%; /* ocupa toda a largura do celular */
+  }
+}
