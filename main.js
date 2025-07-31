@@ -100,6 +100,9 @@ function getMod(valor) {
 
 function increment(event) {
     const span = event.target.previousElementSibling;
+    if (span.textContent >= 40) {
+        return;
+    }
     let valor = parseInt(span.textContent);
     valor++;
     span.textContent = valor;
@@ -110,6 +113,9 @@ function increment(event) {
 
 function decrement(event) {
     const span = event.target.nextElementSibling;
+    if (span.textContent <= 0) {
+        return;
+    }
     let valor = parseInt(span.textContent);
     valor = Math.max(0, valor - 1);
     span.textContent = valor;
@@ -136,7 +142,7 @@ function atualizarModificador(id, valor) {
 
 // vida_texto.innerText = vida_atual + " / " + vida_max;
 async function load_modifiers() {
-    const resposta = await fetch("./modificadores.json");
+    const resposta = await fetch("/docs/modificadores.json");
     const dados = await resposta.json();
     return dados.atributos;
 }
@@ -184,8 +190,17 @@ const item = document.getElementById("item");
 const items_list = document.getElementById("items-list");
 const add_btn = document.getElementById("add-btn");
 
+let counter = 0
 add_btn.addEventListener('click', () => {
+    if (counter >= 1){
+        return;
+    }
+    const msg = document.createElement("p");
+    msg.textContent = "Essa parte ainda não está pronta. Volte daqui algum tempo!";
+    msg.style.fontSize = "150%";
+    counter++;
 
+    add_btn.previousElementSibling.appendChild(msg);
 })
 
 function deleteItem(event) {
