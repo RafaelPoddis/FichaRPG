@@ -179,4 +179,15 @@ function toggleModifiers() {
 }
 
 
-/* ---------- INFORMACOES DA DIREITA ---------- */ 
+/* ---------- INFORMACOES DA DIREITA ---------- */
+const item = document.getElementById("item");
+const items_list = document.getElementById("items-list");
+const add_btn = document.getElementById("add-btn");
+
+add_btn.addEventListener('click', () => {
+
+})
+
+function deleteItem(event) {
+    const itemToBeDeleted = event.target.parentElement.id
+}
