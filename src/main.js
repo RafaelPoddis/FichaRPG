@@ -100,6 +100,9 @@ function getMod(valor) {
 
 function increment(event) {
     const span = event.target.previousElementSibling;
+    if (span.textContent >= 40) {
+        return;
+    }
     let valor = parseInt(span.textContent);
     valor++;
     span.textContent = valor;
@@ -110,6 +113,9 @@ function increment(event) {
 
 function decrement(event) {
     const span = event.target.nextElementSibling;
+    if (span.textContent <= 0) {
+        return;
+    }
     let valor = parseInt(span.textContent);
     valor = Math.max(0, valor - 1);
     span.textContent = valor;
