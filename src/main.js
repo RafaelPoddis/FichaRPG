@@ -1,4 +1,4 @@
-/* ---------- INFORMACOES DA ESQUERDA ---------- */ 
+/* ---------- INFORMACOES DA ESQUERDA ---------- */
 const nome = document.getElementById("name")
 const periodo = document.getElementById("periodo")
 const cla = document.getElementById("cla")
@@ -67,48 +67,63 @@ const force = document.getElementById("force")
 const efc = document.getElementById("efc")
 
 if (localStorage.getItem('hp')) hp.innerText = localStorage.getItem('hp');
-if (localStorage.getItem('agilidade')) agl.innerText = localStorage.getItem('agilidade');
-if (localStorage.getItem('resistencia')) res.innerText = localStorage.getItem('resistencia');
+if (localStorage.getItem('agl')) agl.innerText = localStorage.getItem('agl');
+if (localStorage.getItem('res')) res.innerText = localStorage.getItem('res');
 if (localStorage.getItem('force')) force.innerText = localStorage.getItem('force');
-if (localStorage.getItem('eficiencia')) efc.innerText = localStorage.getItem('eficiencia');
+if (localStorage.getItem('efc')) efc.innerText = localStorage.getItem('efc');
 
-function increment(event){
-    if (event.target.parentElement.id === "vida") {
-        hp.innerText = parseInt(hp.innerText) + 1;
-        localStorage.setItem('hp', hp.innerText);
-    } else if (event.target.parentElement.id === "agilidade") {
-        agl.innerText = parseInt(agl.innerText) + 1;
-        localStorage.setItem('agilidade', agl.innerText);
-    } else if (event.target.parentElement.id === "resistencia") {
-        res.innerText = parseInt(res.innerText) + 1;
-        localStorage.setItem('resistencia', res.innerText);
-    } else if (event.target.parentElement.id === "forca") {
-        force.innerText = parseInt(force.innerText) + 1;
-        localStorage.setItem('force', force.innerText);
-    } else {
-        efc.innerText = parseInt(efc.innerText) + 1;
-        localStorage.setItem('eficiencia', efc.innerText);
-    }
+
+let modificadores = {};
+
+window.addEventListener("DOMContentLoaded", async () => {
+    modificadores = await load_modifiers();
+    inicializarModificadores();
+});
+
+function inicializarModificadores() {
+  const atributos = ["hp", "agl", "res", "force", "efc"];
+  atributos.forEach((id) => {
+    const valor = parseInt(document.getElementById(id).textContent);
+    atualizarModificador(id, valor);
+  });
 }
 
-function decrement(event){
-    if (event.target.parentElement.id === "vida") {
-        hp.innerText = parseInt(hp.innerText) - 1;
-        localStorage.setItem('hp', hp.innerText);
-    } else if (event.target.parentElement.id === "agilidade") {
-        agl.innerText = parseInt(agl.innerText) - 1;
-        localStorage.setItem('agilidade', agl.innerText);
-    } else if (event.target.parentElement.id === "resistencia") {
-        res.innerText = parseInt(res.innerText) - 1;
-        localStorage.setItem('resistencia', res.innerText);
-    } else if (event.target.parentElement.id === "forca") {
-        force.innerText = parseInt(force.innerText) - 1;
-        localStorage.setItem('force', force.innerText);
-    } else {
-        efc.innerText = parseInt(efc.innerText) - 1;
-        localStorage.setItem('eficiencia', efc.innerText);
+function getMod(valor) {
+    for (let faixa in modificadores) {
+        const [min, max] = faixa.split("-").map(Number);
+        if (valor >= min && valor <= max) {
+            return modificadores[faixa];
+        }
     }
+    return 0;
 }
+
+function increment(event) {
+    const span = event.target.previousElementSibling;
+    let valor = parseInt(span.textContent);
+    valor++;
+    span.textContent = valor;
+    localStorage.setItem(span.id, valor);
+    
+    atualizarModificador(span.id, valor);
+}
+
+function decrement(event) {
+    const span = event.target.nextElementSibling;
+    let valor = parseInt(span.textContent);
+    valor = Math.max(0, valor - 1);
+    span.textContent = valor;
+    localStorage.setItem(span.id, valor);
+    
+    atualizarModificador(span.id, valor);
+}
+
+function atualizarModificador(id, valor) {
+    const modSpan = document.getElementById(`mod-${id}`);
+    const mod = getMod(valor);
+    modSpan.textContent = mod >= 0 ? `+${mod}` : `${mod}`;
+}
+
 
 // let hpMod = 10
 // let vida_max = 100 + (hpMod * 10);
@@ -125,6 +140,31 @@ async function load_modifiers() {
     const dados = await resposta.json();
     return dados.atributos;
 }
+
+async function fillTable() {
+    const atributos = await load_modifiers();
+    const tabela = document.getElementById("modTableBody");
+
+    tabela.innerHTML = "";
+
+    for (const valor in atributos) {
+        const mod = atributos[valor];
+
+        const linha = document.createElement("tr");
+
+        const col1 = document.createElement("td");
+        col1.textContent = valor;
+
+        const col2 = document.createElement("td");
+        col2.textContent = mod;
+
+        linha.appendChild(col1);
+        linha.appendChild(col2);
+        tabela.appendChild(linha);
+    }
+}
+
+fillTable();
 
 function toggleModifiers() {
     const popup = document.getElementById("modPopup");

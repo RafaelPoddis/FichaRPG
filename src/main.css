@@ -150,15 +150,16 @@ body{
 }
 
 .tabela-atributos{
+    margin-top: 16%;
     border: 0px solid black;
     border-collapse: collapse;
 }
 
 .tabela-atributos td {
     border: 1px solid black;
-    padding: 20px 100px;   /* ↑↓ 10px, ←→ 20px */
-    line-height: 1.5;     /* Altura da linha maior */
-    text-align: left;
+    padding: 5px 30px;   /* ↑↓ 5px, ←→ 20px */
+    line-height: 2.7;     /* Altura da linha maior */
+    text-align: center;
 }
 
 .minus-btn, .plus-btn {
@@ -189,8 +190,7 @@ body{
 }
 
 #modPopup {
-    /* max-height: 100%;
-    max-width: 100%; */
+    max-height: 30%;
     overflow-y: auto;
     border: 2px solid black;
     height: 70%;
@@ -199,6 +199,17 @@ body{
     border-radius: 8px;
     font-size: 125%;
 }
+/* v ESSA PARTE NAO TA FUNCIONANDO v */
+#modPopup::-webkit-scrollbar-thumb {
+  background-color: #b07a56;
+  border-radius: 6px;
+  border: 1px solid #402a1f;
+}
+
+#modPopup::-webkit-scrollbar-thumb:hover {
+  background-color: #d09b73;
+}
+/* ^ ESSA PARTE NAO TA FUNCIONANDO ^ */
 
 .tabela-modificadores{
     border: 1px solid black;

@@ -58,36 +58,67 @@
             <div class="attributes">
                 <div id="modPopup" class="hidden">
                     <table class="tabela-modificadores">
-                        <tr>
-                            <th>Valor</th>
-                            <th>Modificador</th>
-                        </tr>
-                        <tr>
-                            <td>0-1</td>
-                            <td>-5</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Valor</th>
+                                <th>Modificador</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modTableBody">
+                            <!-- TABELA INSERIDA VIA JS -->
+                        </tbody>
                     </table>
                 </div>
                 <table id="tAtributos" class="tabela-atributos">
                     <tr>
+                        <th>Atributo</th>
+                        <th>Valor</th>
+                        <th>Modificador</th>
+                    </tr>
+                    <tr>
                         <td>Vida</td>
-                        <td id="vida"><button onclick="decrement(event)" class="minus-btn">-</button><span id="hp">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
+                        <td id="vida">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="hp">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-hp">0</td>
                     </tr>
                     <tr>
                         <td>Agilidade</td>
-                        <td id="agilidade"><button onclick="decrement(event)" class="minus-btn">-</button><span id="agl">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
+                        <td id="agilidade">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="agl">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-agl">0</td>
                     </tr>
                     <tr>
                         <td>Resistência</td>
-                        <td id="resistencia"><button onclick="decrement(event)" class="minus-btn">-</button><span id="res">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
+                        <td id="resistencia">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="res">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-res">0</td>
                     </tr>
                     <tr>
                         <td>Força</td>
-                        <td id="forca"><button onclick="decrement(event)" class="minus-btn">-</button><span id="force">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
+                        <td id="forca">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="force">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-force">0</td>
                     </tr>
                     <tr>
                         <td>Eficiência</td>
-                        <td id="eficiencia"><button onclick="decrement(event)" class="minus-btn">-</button><span id="efc">10</span><button onclick="increment(event)" class="plus-btn">+</button></td>
+                        <td id="eficiencia">
+                            <button onclick="decrement(event)" class="minus-btn">-</button>
+                            <span id="efc">10</span>
+                            <button onclick="increment(event)" class="plus-btn">+</button>
+                        </td>
+                        <td class="mod" id="mod-efc">0</td>
                     </tr>
                 </table>
                 <button id="modifiers" onclick="toggleModifiers()">Modificadores</button>
