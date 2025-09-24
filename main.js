@@ -187,22 +187,37 @@ function toggleModifiers() {
 
 
 /* ---------- INFORMACOES DA DIREITA ---------- */
-const item = document.getElementById("item");
-const items_list = document.getElementById("items-list");
 const add_btn = document.getElementById("add-btn");
 
-add_btn.addEventListener('click', () => {
-    if (counter >= 1){
-        return;
-    }
-    const msg = document.createElement("p");
-    msg.textContent = "Essa parte ainda não está pronta. Volte daqui algum tempo!";
-    msg.style.fontSize = "150%";
-    counter++;
+function toggleTheme() {
+  const body = document.body;
+  
+  // Adiciona ou remove a classe 'dark-theme'
+  body.classList.toggle('dark-theme');
+  
+  // Opcional: Salva a preferência do usuário no localStorage
+  if (body.classList.contains('dark-theme')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+}
 
-    add_btn.previousElementSibling.appendChild(msg);
-})
+// Ouve o clique no botão para chamar a função
+add_btn.addEventListener('click', toggleTheme);
+
+// Opcional: Carrega o tema salvo na última visita
+function loadTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+  }
+}
+
+// Chama a função ao carregar a página
+document.addEventListener('DOMContentLoaded', loadTheme);
 
 function deleteItem(event) {
     const itemToBeDeleted = event.target.parentElement.id
 }
+
