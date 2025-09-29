@@ -1,8 +1,22 @@
+:root {
+    --background-image: radial-gradient(farthest-side at 50% 150%, #ffffff, #000000);
+    --text-color: white;
+    --primary-color: #007bff;
+}
+
+.sentinelas {
+    --background-image: linear-gradient(to top, #4F5AB4, #474A51);
+}
+
+.arcanos {
+
+}
+
 body{
-    background-color: #C0A27C;
-    /* background-image: url("/media/pergaminho_bg.jpg");
-    background-size: 100%; */
-    font-family: 'Jim Nightshade', sans-serif;
+    background-image: var(--background-image);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'EB Garamond', sans-serif;
 }
 
 .general {
