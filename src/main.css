@@ -17,6 +17,53 @@ body{
     color: var(--text-color);
     background-image: url("/media/ecos.webp");
     background-size: 100%;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    height: var(--height);
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
     font-family: 'EB Garamond', sans-serif;
+}
+
+.general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-bar {
+    background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    margin: 2%;
+    border: 1px solid white;
+    border-radius: 32px;
+    width: 25rem;
+    height: 4rem;
+}
+
+.nav-bar-btn {
+    border-radius: 50%;
+    border: none;
+    background: none;
+    padding: 7px;
+}
+
+.nav-bar-btn:hover {
+    cursor: pointer;
+}
+
+.profile {
+    background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    margin: 2%;
+    border: 1px solid white;
+    border-radius: 24px;
+    width: 80rem;
+    height: 35rem;
 }
