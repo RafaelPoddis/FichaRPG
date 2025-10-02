@@ -17,7 +17,6 @@ body{
     color: var(--text-color);
     background-image: url("/media/ecos.webp");
     background-size: 100%;
-    height: var(--height);
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'EB Garamond', sans-serif;
 }
